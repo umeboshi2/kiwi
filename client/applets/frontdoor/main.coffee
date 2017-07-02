@@ -1,0 +1,37 @@
+Marionette = require 'backbone.marionette'
+TkApplet = require 'tbirds/tkapplet'
+
+Controller = require './controller'
+
+
+MainChannel = Backbone.Radio.channel 'global'
+
+class Router extends Marionette.AppRouter
+  appRoutes:
+    '': 'frontdoor'
+    'frontdoor': 'frontdoor'
+    'frontdoor/view': 'frontdoor'
+    'frontdoor/view/:name': 'view_page'
+    'frontdoor/login': 'show_login'
+    'frontdoor/logout': 'show_logout'
+    #FIXME
+    'pages/:name': 'view_page'
+    'frontdoor/upload': 'upload_view'
+    'frontdoor/themes': 'themeSwitcher'
+    
+class Applet extends TkApplet
+  Controller: Controller
+  Router: Router
+
+  onStop: ->
+    console.log "(Child) Stopping frontdoor", @.isRunning()
+    super()
+
+MainChannel.reply 'applet:frontdoor:route', () ->
+  console.warn "Don't use applet:frontdoor:route"
+  controller = new Controller MainChannel
+  router = new Router
+    controller: controller
+    
+      
+module.exports = Applet

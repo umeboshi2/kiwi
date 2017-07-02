@@ -1,0 +1,11 @@
+var bookshelf;
+
+bookshelf = require('../bookshelf');
+
+module.exports = bookshelf.Model.extend({
+  tableName: 'ebcsv_clz_comic_pages'
+}, {
+  jsonColumns: ['clzdata']
+});
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZWJjbHpwYWdlLmpzIiwic291cmNlcyI6WyJlYmNsenBhZ2UuY29mZmVlIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLElBQUE7O0FBQUEsU0FBQSxHQUFZLE9BQUEsQ0FBUSxjQUFSOztBQUVaLE1BQU0sQ0FBQyxPQUFQLEdBQWlCLFNBQVMsQ0FBQyxLQUFLLENBQUMsTUFBaEIsQ0FDZjtFQUFBLFNBQUEsRUFBVyx1QkFBWDtDQURlLEVBR2Y7RUFBQSxXQUFBLEVBQWEsQ0FBQyxTQUFELENBQWI7Q0FIZSIsInNvdXJjZXNDb250ZW50IjpbImJvb2tzaGVsZiA9IHJlcXVpcmUgJy4uL2Jvb2tzaGVsZidcblxubW9kdWxlLmV4cG9ydHMgPSBib29rc2hlbGYuTW9kZWwuZXh0ZW5kXG4gIHRhYmxlTmFtZTogJ2ViY3N2X2Nsel9jb21pY19wYWdlcydcbixcbiAganNvbkNvbHVtbnM6IFsnY2x6ZGF0YSddXG4iXX0=

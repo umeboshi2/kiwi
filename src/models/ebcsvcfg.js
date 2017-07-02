@@ -1,0 +1,12 @@
+var bookshelf;
+
+bookshelf = require('../bookshelf');
+
+module.exports = bookshelf.Model.extend({
+  tableName: 'ebcsv_configs',
+  hasTimestamps: true
+}, {
+  jsonColumns: ['content']
+});
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZWJjc3ZjZmcuanMiLCJzb3VyY2VzIjpbImViY3N2Y2ZnLmNvZmZlZSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxJQUFBOztBQUFBLFNBQUEsR0FBWSxPQUFBLENBQVEsY0FBUjs7QUFFWixNQUFNLENBQUMsT0FBUCxHQUFpQixTQUFTLENBQUMsS0FBSyxDQUFDLE1BQWhCLENBQ2Y7RUFBQSxTQUFBLEVBQVcsZUFBWDtFQUNBLGFBQUEsRUFBZSxJQURmO0NBRGUsRUFJZjtFQUFBLFdBQUEsRUFBYSxDQUFDLFNBQUQsQ0FBYjtDQUplIiwic291cmNlc0NvbnRlbnQiOlsiYm9va3NoZWxmID0gcmVxdWlyZSAnLi4vYm9va3NoZWxmJ1xuXG5tb2R1bGUuZXhwb3J0cyA9IGJvb2tzaGVsZi5Nb2RlbC5leHRlbmRcbiAgdGFibGVOYW1lOiAnZWJjc3ZfY29uZmlncydcbiAgaGFzVGltZXN0YW1wczogdHJ1ZVxuLFxuICBqc29uQ29sdW1uczogWydjb250ZW50J11cbiAgXG4iXX0=
