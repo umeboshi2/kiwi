@@ -16,6 +16,9 @@ MainAppConfig = require './index-config'
 MainChannel = Backbone.Radio.channel 'global'
 MessageChannel = Backbone.Radio.channel 'messages'
 
+os = require 'os'
+
+
 class FooterView extends Marionette.View
   template: tc.renderable (model) ->
     version_style = '.col-sm-2.col-sm-offset-10'
@@ -29,8 +32,11 @@ class FooterView extends Marionette.View
             tc.td "#{days} days left for #{model.token.name}"
           else
             tc.td "Time expired for #{model.token.name}"
-          tc.td "Version: #{model.version}"
-            
+          #tc.td "Version: #{model.version}"
+          load = os.loadavg()
+          console.log 'load is', os, load
+          tc.td "Load Avg #{load.join ', '}"
+          
 ms_remaining = (token) ->
   now = new Date()
   exp = new Date(token.exp * 1000)

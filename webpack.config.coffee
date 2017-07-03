@@ -89,7 +89,7 @@ WebPackConfig =
   module:
     loaders: loaders
   resolve: resolve
-
+  target: 'electron-renderer'
 if BuildEnvironment is 'dev'
   #proxy = require './webpack-config/devserver-proxies'
   WebPackConfig.devServer =
